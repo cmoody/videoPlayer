@@ -38,7 +38,6 @@ window.onload = function() {
 		}
 	});
 
-
 	// Event listener for the mute button
 	muteButton.addEventListener("click", function() {
 		if (video.muted == false) {
@@ -46,13 +45,15 @@ window.onload = function() {
 			video.muted = true;
 
 			// Update the button text
-			muteButton.innerHTML = "Unmute";
+			// muteButton.innerHTML = "Unmute";
+			muteButton.className = "glyphicon glyphicon-volume-off";
 		} else {
 			// Unmute the video
 			video.muted = false;
 
 			// Update the button text
-			muteButton.innerHTML = "Mute";
+			// muteButton.innerHTML = "Mute";
+			muteButton.className = "glyphicon glyphicon-volume-up";
 		}
 	});
 
@@ -76,6 +77,8 @@ window.onload = function() {
 
 		// Update the video time
 		video.currentTime = time;
+
+		playButton.className = playButton.className + " full";
 	});
 
 	

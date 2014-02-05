@@ -10,40 +10,32 @@
 	left: 0;
 	right: 0;
 	padding: 5px;
-	/*opacity: 0;
-	-webkit-transition: opacity .3s;
-	-moz-transition: opacity .3s;
-	-o-transition: opacity .3s;
-	-ms-transition: opacity .3s;
-	transition: opacity .3s;*/
-	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		left top,
-		color-stop(0.13, rgb(3,113,168)),
-		color-stop(1, rgb(0,136,204))
-	);
+	background-color: rgba(33,33,33, 0.9);
 }
-/*
-#video-container:hover #video-controls {
-	opacity: .9;
-}
-*/
+
 button {
-	background: rgba(0,0,0,.5);
+	background: rgba(0,0,0, 0.6);
 	border: 0;
 	color: #fff;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-o-border-radius: 3px;
 	border-radius: 3px;
+	border-style: none;
+	outline: none;
+	display: inline-block;
 }
 
 button:hover {
 	cursor: pointer;
 }
 
-#play-pause, #full-screen {
+input, button, select, textarea {
+	float: left;
+	margin-right: 15px;
+}
+
+#full-screen, #play-pause, #mute {
 	color: #fff;
 }
 
