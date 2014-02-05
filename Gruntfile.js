@@ -17,6 +17,20 @@ module.exports = function(grunt) {
           keepalive: true
         }
       }
+    },
+
+    // https://npmjs.org/package/grunt-ftp-deploy
+    'ftp-deploy': {
+      build: {
+        auth: {
+          host: 'chasethebits.com',
+          port: 21,
+          authKey: 'key1'
+        },
+        src: 'build',
+        dest: '/demo/videoPlayer',
+        exclusions: ['src/**/.DS_Store', 'src/**/Thumbs.db']
+      }
     }
 
   });
@@ -26,7 +40,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('prod', [
-
+    'ftp-deploy'
   ]);
 
 };
