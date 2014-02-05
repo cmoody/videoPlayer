@@ -27,7 +27,7 @@ module.exports = function(grunt) {
           port: 21,
           authKey: 'key1'
         },
-        src: 'build',
+        src: 'src',
         dest: '/demo/videoPlayer',
         exclusions: ['src/**/.DS_Store', 'src/**/Thumbs.db']
       }
