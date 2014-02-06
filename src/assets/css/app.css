@@ -47,6 +47,16 @@ input, button, select, textarea {
 	width: 60px;
 }
 
+.nextVideo {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background-color: #00ff00;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+
 /* Canvas */
 #canvas-container {
 

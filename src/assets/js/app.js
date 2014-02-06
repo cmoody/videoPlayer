@@ -8,6 +8,8 @@ window.onload = function() {
 
 	// Video
 	var video = document.getElementById("videoPlayer");
+	var videoControls = document.getElementById("video-controls");
+	var videoContainer = document.getElementById("video-container");
 
 	// Buttons
 	var playButton = document.getElementById("play-pause");
@@ -18,6 +20,26 @@ window.onload = function() {
 	var seekBar = document.getElementById("seek-bar");
 	var volumeBar = document.getElementById("volume-bar");
 
+	var nextEl = document.createElement("div");
+	var nextText = document.createTextNode("Click Here!");
+
+	video.addEventListener("ended", function() {
+		video.src = 'assets/media/end.ogg';
+		video.type = 'video/ogg';
+		video.loop = true;
+		video.play();
+		
+		nextEl.className = 'nextVideo';
+		nextEl.appendChild(nextText);
+
+		videoContainer.appendChild(nextEl);
+
+		videoControls.className = 'hidden';
+	});
+
+	nextEl.addEventListener("click", function() {
+		alert("You clicked in the video");
+	});
 
 	// Event listener for the play/pause button
 	playButton.addEventListener("click", function() {
@@ -78,7 +100,7 @@ window.onload = function() {
 		// Update the video time
 		video.currentTime = time;
 
-		playButton.className = playButton.className + " full";
+		playButton.className = "glyphicon glyphicon-pause";
 	});
 
 	
