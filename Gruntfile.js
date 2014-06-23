@@ -1,46 +1,30 @@
 module.exports = function(grunt) {
 
-  require('time-grunt')(grunt);
-
-  require('load-grunt-tasks')(grunt);
-
+  // Project configuration.
   grunt.initConfig({
-
-  	connect: {
-      options: {
-        port: 8000,
-      },
-
-      dev: {
+    connect: {
+      server: {
         options: {
+          port: 8080,
           base: 'src',
           keepalive: true
         }
       }
     },
 
-    // https://npmjs.org/package/grunt-ftp-deploy
-    'ftp-deploy': {
-      build: {
-        auth: {
-          host: 'chasethebits.com',
-          port: 21,
-          authKey: 'key1'
-        },
-        src: 'src',
-        dest: '/demo/videoPlayer',
-        exclusions: ['src/**/.DS_Store', 'src/**/Thumbs.db']
-      }
+    'gh-pages': {
+      options: {
+        base: 'src'
+      },
+      src: ['**/*']
     }
-
   });
 
-  grunt.registerTask('dev', [
-  	'connect:dev'
-  ]);
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-gh-pages');
 
-  grunt.registerTask('prod', [
-    'ftp-deploy'
-  ]);
+  // Default task(s).
+  grunt.registerTask('default', ['connect']);
+  grunt.registerTask('deploy', ['gh-pages']);
 
 };
