@@ -1,0 +1,63 @@
+#video-container {
+	width: 480px;
+	height: 360px;
+	position: relative;
+}
+
+#video-controls {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 5px;
+	background-color: rgba(33,33,33, 0.9);
+}
+
+button {
+	background: rgba(0,0,0, 0.6);
+	border: 0;
+	color: #fff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	border-style: none;
+	outline: none;
+	display: inline-block;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+input, button, select, textarea {
+	float: left;
+	margin-right: 15px;
+}
+
+#full-screen, #play-pause, #mute {
+	color: #fff;
+}
+
+#seek-bar {
+	width: 228px;
+}
+
+#volume-bar {
+	width: 60px;
+}
+
+.nextVideo {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background-color: #00ff00;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+
+/* Canvas */
+#canvas-container {
+
+}
